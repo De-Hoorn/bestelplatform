@@ -126,6 +126,7 @@ main{padding-block:12px 120px}
     <div class="tools">
       <input type="search" id="zoek" placeholder="Zoek product…" aria-label="Zoek product">
       <label class="chk"><input type="checkbox" id="opennog"> Enkel nog niet geteld</label>
+      <button class="btn ghost" type="button" id="sorteer" aria-live="polite">Sorteer per leverancier</button>
       <button class="btn ghost" type="button" id="reset">Nieuwe telling starten</button>
     </div>
     <div class="confirm" id="reset-confirm" hidden>
@@ -198,6 +199,8 @@ main{padding-block:12px 120px}
   var extraVeld = document.getElementById("extra");
   extraVeld.value = state.extra || "";
   extraVeld.addEventListener("input", function(){ state.extra = extraVeld.value; bewaarConcept(); });
+  state.sorteer = "categorie";
+  try { if (localStorage.getItem("telling-sorteer") === "leverancier") state.sorteer = "leverancier"; } catch(e){}
   var VKEY = "telling-vorige-v1";
   state.vorige = null;
   try { var rv = localStorage.getItem(VKEY); if (rv) state.vorige = JSON.parse(rv); } catch(e){}
@@ -254,7 +257,7 @@ main{padding-block:12px 120px}
     if (!state.producten.length){ box.appendChild(el("div",{cls:"empty",text: state.db === undefined ? "De productlijst wordt geladen…" : state.db ? "Er staan nog geen producten in de lijst. Vraag Fien om de productlijst in te laden." : "De productlijst kan niet geladen worden. Open deze pagina via claude.ai met je account."})); return; }
     var groepen = [], idx = {};
     state.producten.slice().sort(function(a,b){ return a.volgorde - b.volgorde; }).forEach(function(p){
-      var k = p.locatie || "Overig";
+      var k = state.sorteer === "leverancier" ? (p.leverancier || "Zonder leverancier") : (p.locatie || "Overig");
       if (!(k in idx)){ idx[k] = groepen.length; groepen.push({naam:k, items:[]}); }
       groepen[idx[k]].items.push(p);
     });
@@ -349,6 +352,14 @@ main{padding-block:12px 120px}
   }
   document.getElementById("zoek").addEventListener("input", filter);
   document.getElementById("opennog").addEventListener("change", filter);
+  var sorteerKnop = document.getElementById("sorteer");
+  function toonSorteerKnop(){ sorteerKnop.textContent = state.sorteer === "leverancier" ? "Sorteer per categorie" : "Sorteer per leverancier"; }
+  sorteerKnop.addEventListener("click", function(){
+    state.sorteer = state.sorteer === "leverancier" ? "categorie" : "leverancier";
+    try { localStorage.setItem("telling-sorteer", state.sorteer); } catch(e){}
+    toonSorteerKnop(); renderLijst();
+  });
+  toonSorteerKnop();
   var resetBox = document.getElementById("reset-confirm");
   document.getElementById("reset").addEventListener("click", function(){ resetBox.hidden = false; });
   document.getElementById("reset-nee").addEventListener("click", function(){ resetBox.hidden = true; });
