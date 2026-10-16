@@ -6,7 +6,7 @@
       "eenheid": "vat 20L",
       "hoeveelheid": 2,
       "id": "bees-karmeliet-vat-20l",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Vaten",
       "product": "Karmeliet vat 20L"
     },
@@ -15,7 +15,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-leffe-blond-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Leffe blond 33cl"
     },
@@ -24,7 +24,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-leffe-bruin-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Leffe bruin 33cl"
     },
@@ -33,7 +33,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-leffe-0-0-blond-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Leffe 0,0 blond 33cl"
     },
@@ -42,7 +42,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 2,
       "id": "bees-omer-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Omer 33cl"
     },
@@ -51,7 +51,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-brugse-zot-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Brugse Zot 33cl"
     },
@@ -60,7 +60,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-kriek-lindemans-25cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Kriek Lindemans 25cl"
     },
@@ -69,7 +69,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-hoegaarden-25cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Hoegaarden 25cl"
     },
@@ -78,7 +78,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 5,
       "id": "bees-duvel-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Duvel 33cl"
     },
@@ -87,7 +87,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-delvaux-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Delvaux 33cl"
     },
@@ -96,7 +96,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-victoria-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Victoria 33cl"
     },
@@ -105,7 +105,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-westmalle-tripel-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Westmalle Tripel 33cl"
     },
@@ -114,7 +114,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 2,
       "id": "bees-westmalle-dubbel-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Westmalle Dubbel 33cl"
     },
@@ -123,7 +123,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-orval-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Orval 33cl"
     },
@@ -132,7 +132,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 2,
       "id": "bees-stella-0-0-25cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Stella 0,0 25cl"
     },
@@ -141,7 +141,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 2,
       "id": "bees-sportzot-0-0-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Sportzot 0,0 33cl"
     },
@@ -150,7 +150,7 @@
       "eenheid": "bak 12",
       "hoeveelheid": 1,
       "id": "bees-oude-geuze-boon-37-5cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Oude Geuze Boon 37,5cl"
     },
@@ -159,7 +159,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-seefbier-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Seefbier 33cl"
     },
@@ -168,7 +168,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-vedett-ipa-33cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Bier (bakken)",
       "product": "Vedett IPA 33cl"
     },
@@ -231,7 +231,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 4,
       "id": "bees-coca-cola-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Coca-Cola 20cl"
     },
@@ -240,7 +240,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 4,
       "id": "bees-coca-cola-zero-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Coca-Cola Zero 20cl"
     },
@@ -249,7 +249,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-fanta-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Fanta 20cl"
     },
@@ -258,7 +258,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-sprite-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Sprite 20cl"
     },
@@ -267,7 +267,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-minute-maid-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Minute Maid 20cl"
     },
@@ -276,7 +276,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-gini-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Gini 20cl"
     },
@@ -285,7 +285,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-chaudfontaine-plat-25cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Chaudfontaine plat 25cl"
     },
@@ -294,7 +294,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-chaudfontaine-bruis-25cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Frisdrank, sappen & water",
       "product": "Chaudfontaine bruis 25cl"
     },
@@ -555,7 +555,7 @@
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "bees-royal-bliss-agrum-20cl",
-      "leverancier": "Bees",
+      "leverancier": "BEES (AB InBev)",
       "locatie": "Sterke drank, aperitief & cocktails",
       "product": "Royal Bliss Agrum 20cl"
     },
