@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Voorraadtelling Grand Café</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<meta name="theme-color" content="#1f5c45">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Layout: één kolom voor tablet; sticky kop met tabs, sticky voortgangsbalk onderaan; tellijst per opslagplek */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --surface-2:#e8ece6; --fg:#1d2420; --muted:#5d6a62; --line:#d3dad3;
+  --accent:#1f5c45; --accent-fg:#ffffff; --accent-soft:#dcebe3;
+  --warn:#a35a00; --warn-soft:#fbecd6; --bad:#b3261e; --bad-soft:#f9dedc; --ok:#2e7d4f;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121614; --surface:#1b211e; --surface-2:#242c28; --fg:#e7ece8; --muted:#9aa8a0; --line:#323c37;
+  --accent:#6fc39b; --accent-fg:#0d1f17; --accent-soft:#1f3a2e;
+  --warn:#f0b35c; --warn-soft:#3a2b14; --bad:#f2918a; --bad-soft:#3d1c1a; --ok:#7fd3a2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121614; --surface:#1b211e; --surface-2:#242c28; --fg:#e7ece8; --muted:#9aa8a0; --line:#323c37;
+  --accent:#6fc39b; --accent-fg:#0d1f17; --accent-soft:#1f3a2e;
+  --warn:#f0b35c; --warn-soft:#3a2b14; --bad:#f2918a; --bad-soft:#3d1c1a; --ok:#7fd3a2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.4;font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:14px 8px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:.01em;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:15px}
+nav{display:flex;gap:6px;padding-bottom:10px;overflow-x:auto}
+nav button{font:600 16px var(--body);border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{padding-block:12px 120px}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.tools input[type=search]{flex:1 1 220px;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);min-height:44px}
+.chk{display:flex;gap:8px;align-items:center;font-size:15px;color:var(--muted)}
+.chk input{width:22px;height:22px;accent-color:var(--accent)}
+.loc{margin-top:18px}
+.loc h2{font-family:var(--display);font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px;display:flex;justify-content:space-between;gap:8px}
+.loc h2 small{font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none;font-weight:400}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row.low{background:var(--bad-soft)}
+.pname{font-weight:600;overflow-wrap:anywhere}
+.verp{font-weight:400;color:var(--muted);white-space:nowrap}
+#extra{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);resize:vertical}
+.uitleg{background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin:4px 0 10px;max-width:70ch}
+.uitleg strong{color:var(--accent)}
+.vorig{font:600 13px var(--body);border:1px dashed var(--line);background:var(--surface-2);color:var(--fg);border-radius:999px;padding:2px 10px;cursor:pointer;min-height:28px}
+.pmeta{color:var(--muted);font-size:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{font-size:13px;font-weight:700;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.pill.low{background:var(--bad);color:var(--surface)}
+.pill.ok{background:var(--accent-soft);color:var(--accent)}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:48px;height:48px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);font:700 24px var(--body);cursor:pointer;touch-action:manipulation}
+.step input{width:70px;height:48px;text-align:center;font:700 20px var(--body);border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg)}
+.step input::placeholder{color:var(--muted);font-weight:400}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bar .wrap{display:flex;gap:12px;align-items:center;padding-block:10px}
+.prog{flex:1;min-width:0}
+.prog .track{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-top:4px}
+.prog .fill{height:100%;background:var(--accent);width:0}
+.btn{font:700 17px var(--body);border-radius:10px;padding:12px 18px;min-height:48px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.sup{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
+.sup-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 14px;flex-wrap:wrap}
+.sup-h h3{font-family:var(--display);font-size:24px;margin:0;font-weight:700}
+.sup-h p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.sup.go{border-color:var(--accent)}
+.sup.go .sup-h{background:var(--accent-soft)}
+.tag{font-weight:700;font-size:14px;border-radius:999px;padding:4px 12px;white-space:nowrap}
+.tag.go{background:var(--accent);color:var(--accent-fg)}
+.tag.no{background:var(--surface-2);color:var(--muted)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tbl{width:100%;border-collapse:collapse;font-size:16px}
+.tbl th{text-align:left;font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.05em;padding:6px 14px;border-top:1px solid var(--line)}
+.tbl td{padding:8px 14px;border-top:1px solid var(--line);vertical-align:top}
+.tbl td.n,.tbl th.n{text-align:right;white-space:nowrap}
+.tbl tr.zero td{color:var(--muted)}
+.tbl .big{font-weight:700;font-size:18px}
+.scroll{overflow-x:auto}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:24px;color:var(--muted);text-align:center}
+.note{color:var(--muted);font-size:14px;margin:6px 0 0}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;z-index:20}
+.hist{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-top:10px}
+.hist summary{padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600}
+.hist summary span{color:var(--muted);font-weight:400}
+.hist .body{padding:0 14px 12px}
+.confirm{background:var(--warn-soft);border:1px solid var(--warn);border-radius:12px;padding:12px 14px;margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.confirm p{margin:0;flex:1 1 220px}
+@media (max-width:520px){h1{font-size:25px}.step button{width:44px;height:44px}.step input{width:58px;height:44px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<script src="config.js"></script>
+<script src="pin.js"></script>
+<script src="platform.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <h1>Voorraadtelling</h1>
+      <div class="sub" id="datum"></div>
+    </div>
+    <nav role="tablist">
+      <button role="tab" id="tab-tellen" aria-selected="true" data-view="tellen">Tellen</button>
+      <button role="tab" id="tab-bestel" aria-selected="false" data-view="bestel">Bestellijst</button>
+      <button role="tab" id="tab-hist" aria-selected="false" data-view="hist">Vorige tellingen</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="v-tellen">
+    <div class="tools">
+      <input type="search" id="zoek" placeholder="Zoek product…" aria-label="Zoek product">
+      <label class="chk"><input type="checkbox" id="opennog"> Enkel nog niet geteld</label>
+      <button class="btn ghost" type="button" id="reset">Nieuwe telling starten</button>
+    </div>
+    <div class="confirm" id="reset-confirm" hidden>
+      <p>Nieuwe telling starten? De huidige aantallen worden bewaard als <strong>vorige telling</strong> en de lijst wordt leeggemaakt.</p>
+      <button class="btn" type="button" id="reset-ja">Ja, nieuwe telling</button>
+      <button class="btn ghost" type="button" id="reset-nee">Annuleren</button>
+    </div>
+    <div class="uitleg"><strong>Wat tel je?</strong> Tel enkel volle bakken, dozen, flessen of vaten. Aangebroken verpakkingen tel je niet mee. Laat leeg wat je niet geteld hebt. Onder elk product staat het aantal van de vorige telling; tik erop om het over te nemen en pas aan waar nodig. Je telling wordt op dit toestel bewaard tot je ze opslaat.</div>
+    <p class="note"><strong>Bestelpunt</strong> = het aantal volle verpakkingen dat er minstens moet staan. Tel je <em>minder</em> dan het bestelpunt, dan kleurt het product rood en komt het op de bestellijst. Voorbeeld: Duvel heeft bestelpunt 7. Tel je 7 of meer bakken, dan hoef je niets te bestellen. Tel je er 5, dan moet er bijbesteld worden.</p>
+    <div id="lijst"><div class="empty">De productlijst wordt geladen…</div></div>
+    <div class="loc">
+      <h2><label for="extra">Ontbreekt er iets op de lijst?</label></h2>
+      <textarea id="extra" rows="4" placeholder="Bv. 2 bakken Gouden Carolus, nog 1 doos rietjes nodig, …"></textarea>
+      <p class="note">Dit komt mee op de bestellijst en in de opgeslagen telling. Foto's (bv. van een etiket of een leeg rek) stuur je samen met de bestellijst via WhatsApp.</p>
+    </div>
+  </section>
+
+  <section id="v-bestel" hidden>
+    <div class="uitleg"><strong>Hoe wordt de hoeveelheid berekend?</strong> Bestellen = bestelpunt + vaste bestelhoeveelheid − wat je geteld hebt. Zo vul je altijd terug aan tot boven het bestelpunt, met marge tot de volgende levering.</div>
+    <p class="note">Rood = onder het bestelpunt. Bij leveranciers die om de 3 weken leveren wordt dan alles van die leverancier aangevuld.</p>
+    <div id="bestel"></div>
+    <div id="opslaan-zone"></div>
+  </section>
+
+  <section id="v-hist" hidden>
+    <div id="hist"><div class="empty">Nog geen opgeslagen tellingen.</div></div>
+  </section>
+</main>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="prog">
+      <div><strong id="teller">0</strong> <span class="sub" id="teller-tot">van 0 geteld</span> · <span class="sub" id="teller-laag"></span></div>
+      <div class="track"><div class="fill" id="fill"></div></div>
+    </div>
+    <button class="btn" id="naar-bestel">Bestellijst</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script type="application/json" id="seed">{"items": [{"id": "bees-karmeliet-vat-20l", "product": "Karmeliet vat 20L", "leverancier": "Bees", "eenheid": "vat 20L", "bestelpunt": 3, "hoeveelheid": 2, "locatie": "Vaten"}, {"id": "bees-leffe-blond-33cl", "product": "Leffe blond 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-leffe-bruin-33cl", "product": "Leffe bruin 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-leffe-0-0-blond-33cl", "product": "Leffe 0,0 blond 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-omer-33cl", "product": "Omer 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 3, "hoeveelheid": 2, "locatie": "Bier (bakken)"}, {"id": "bees-brugse-zot-33cl", "product": "Brugse Zot 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-kriek-lindemans-25cl", "product": "Kriek Lindemans 25cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-hoegaarden-25cl", "product": "Hoegaarden 25cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-duvel-33cl", "product": "Duvel 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 7, "hoeveelheid": 5, "locatie": "Bier (bakken)"}, {"id": "bees-delvaux-33cl", "product": "Delvaux 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-victoria-33cl", "product": "Victoria 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-westmalle-tripel-33cl", "product": "Westmalle Tripel 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-westmalle-dubbel-33cl", "product": "Westmalle Dubbel 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 2, "locatie": "Bier (bakken)"}, {"id": "bees-orval-33cl", "product": "Orval 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-stella-0-0-25cl", "product": "Stella 0,0 25cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 6, "hoeveelheid": 2, "locatie": "Bier (bakken)"}, {"id": "bees-sportzot-0-0-33cl", "product": "Sportzot 0,0 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 3, "hoeveelheid": 2, "locatie": "Bier (bakken)"}, {"id": "bees-oude-geuze-boon-37-5cl", "product": "Oude Geuze Boon 37,5cl", "leverancier": "Bees", "eenheid": "bak 12", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-seefbier-33cl", "product": "Seefbier 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-vedett-ipa-33cl", "product": "Vedett IPA 33cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-st-bernardus-tripel-33cl", "product": "St-Bernardus Tripel 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-st-bernardus-abt-12-33cl", "product": "St-Bernardus Abt 12 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-ruwet-cider-33cl", "product": "Ruwet cider 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-karmeliet-0-4-33cl", "product": "Karmeliet 0,4% 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-liefmans-0-0-25cl", "product": "Liefmans 0,0 25cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "charlier-paix-dieu-33cl", "product": "Paix Dieu 33cl", "leverancier": "Charlier", "eenheid": "bak 12", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Bier (bakken)"}, {"id": "bees-coca-cola-20cl", "product": "Coca-Cola 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 8, "hoeveelheid": 4, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-coca-cola-zero-20cl", "product": "Coca-Cola Zero 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 10, "hoeveelheid": 4, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-fanta-20cl", "product": "Fanta 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-sprite-20cl", "product": "Sprite 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-minute-maid-20cl", "product": "Minute Maid 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-gini-20cl", "product": "Gini 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-chaudfontaine-plat-25cl", "product": "Chaudfontaine plat 25cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "bees-chaudfontaine-bruis-25cl", "product": "Chaudfontaine bruis 25cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-papegaei-33cl", "product": "Papegaei 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-almdudler-35cl", "product": "Almdudler 35cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-thrive-peak-33cl", "product": "Thrive Peak 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-thrive-play-33cl", "product": "Thrive Play 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-thrive-unwind-33cl", "product": "Thrive Unwind 33cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-ritchie-citroen-27-5cl", "product": "Ritchie citroen 27,5cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-ritchie-pompelmoes-27-5cl", "product": "Ritchie pompelmoes 27,5cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-crodino-17-5cl", "product": "Crodino 17,5cl", "leverancier": "Charlier", "eenheid": "bak 24", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-lemonaid-passievrucht-33cl", "product": "Lemonaid passievrucht 33cl", "leverancier": "Charlier", "eenheid": "bak 12", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-lemonaid-bloedappelsien-33cl", "product": "Lemonaid bloedappelsien 33cl", "leverancier": "Charlier", "eenheid": "bak 12", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-appelsap-hoogveld-bib-5l", "product": "Appelsap Hoogveld BIB 5L", "leverancier": "Charlier", "eenheid": "BIB 5L", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Frisdrank, sappen & water"}, {"id": "charlier-appel-rodebietsap-75cl", "product": "Appel-rodebietsap 75cl", "leverancier": "Charlier", "eenheid": "fles 75cl", "bestelpunt": 4, "hoeveelheid": 2, "locatie": "Frisdrank, sappen & water"}, {"id": "cinoco-hysope-tonic-original-20cl", "product": "Hysope tonic (original) 20cl", "leverancier": "Cinoco", "eenheid": "bak 24", "bestelpunt": 6, "hoeveelheid": 9, "locatie": "Frisdrank, sappen & water"}, {"id": "cinoco-hysope-ginger-beer-20cl", "product": "Hysope ginger beer 20cl", "leverancier": "Cinoco", "eenheid": "bak 24", "bestelpunt": 5, "hoeveelheid": 7, "locatie": "Frisdrank, sappen & water"}, {"id": "cinoco-hysope-ginger-ale-20cl", "product": "Hysope ginger ale 20cl", "leverancier": "Cinoco", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Frisdrank, sappen & water"}, {"id": "hanos-prosecco-mionetto-75cl", "product": "Prosecco Mionetto 75cl", "leverancier": "Hanos", "eenheid": "doos 6", "bestelpunt": 2, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "cinoco-champagne-ayala-75cl", "product": "Champagne Ayala 75cl", "leverancier": "Cinoco", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "cinoco-buglioni-il-mona-75cl", "product": "Buglioni Il Mona 75cl", "leverancier": "Cinoco", "eenheid": "doos 6", "bestelpunt": 4, "hoeveelheid": 6, "locatie": "Wijn & bubbels"}, {"id": "cinoco-alie-rose-75cl", "product": "Alìe rosé 75cl", "leverancier": "Cinoco", "eenheid": "doos 6", "bestelpunt": 3, "hoeveelheid": 4, "locatie": "Wijn & bubbels"}, {"id": "cinoco-aix-rose-75cl", "product": "AIX rosé 75cl", "leverancier": "Cinoco", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "cinoco-zanut-malvazija-75cl", "product": "Zanut Malvazija 75cl", "leverancier": "Cinoco", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "artevino-ijalba-viura-75cl", "product": "Ijalba Viura 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 10, "hoeveelheid": 14, "locatie": "Wijn & bubbels"}, {"id": "artevino-cava-gran-campo-75cl", "product": "Cava Gran Campo 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 7, "hoeveelheid": 10, "locatie": "Wijn & bubbels"}, {"id": "artevino-spumante-la-jara-rose-75cl", "product": "Spumante La Jara rosé 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "artevino-nuna-malbec-75cl", "product": "Nuna Malbec 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Wijn & bubbels"}, {"id": "artevino-cultus-merlot-75cl", "product": "Cultus Merlot 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "artevino-il-palagio-chianti-75cl", "product": "Il Palagio Chianti 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "artevino-roter-veltliner-75cl", "product": "Roter Veltliner 75cl", "leverancier": "Artevino", "eenheid": "doos 6", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Wijn & bubbels"}, {"id": "bees-royal-bliss-agrum-20cl", "product": "Royal Bliss Agrum 20cl", "leverancier": "Bees", "eenheid": "bak 24", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "charlier-rum-havana-especial-100cl", "product": "Rum Havana Especial 100cl", "leverancier": "Charlier", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "charlier-whisky-gouden-carolus-70cl", "product": "Whisky Gouden Carolus 70cl", "leverancier": "Charlier", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-campari-100cl", "product": "Campari 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 2, "hoeveelheid": 3, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-martini-bianco-150cl", "product": "Martini Bianco 150cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-martini-rosso-150cl", "product": "Martini Rosso 150cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-vodka-absolut-100cl", "product": "Vodka Absolut 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 3, "hoeveelheid": 4, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-rum-kraken-70cl", "product": "Rum Kraken 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 2, "hoeveelheid": 3, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-copperhead-50cl", "product": "Gin Copperhead 50cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 2, "hoeveelheid": 2, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-copperhead-na-50cl", "product": "Copperhead NA 50cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-whisky-jameson-100cl", "product": "Whisky Jameson 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-aperol-100cl", "product": "Aperol 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 7, "hoeveelheid": 10, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-pineau-des-charentes-75cl", "product": "Pineau des Charentes 75cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-huis-bombay-london-dry-100cl", "product": "Gin huis (Bombay/London Dry) 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 2, "hoeveelheid": 2, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-bulldog-70cl", "product": "Gin Bulldog 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-double-you-70cl", "product": "Gin Double You 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-marula-50cl", "product": "Gin Marula 50cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-lillet-blanc-75cl", "product": "Lillet blanc 75cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-lillet-rose-75cl", "product": "Lillet rosé 75cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-ricard-100cl", "product": "Ricard 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-seedlip-grove-70cl", "product": "Seedlip Grove 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 3, "hoeveelheid": 4, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-vlierbloesemsiroop-70cl", "product": "Vlierbloesemsiroop 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 0, "hoeveelheid": 3, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-creme-de-cassis-70cl", "product": "Crème de cassis 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-licor-43-100cl", "product": "Licor 43 100cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-gin-monkey-47-50cl", "product": "Gin Monkey 47 50cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "de-wit-kahlua-70cl", "product": "Kahlúa 70cl", "leverancier": "De Wit", "eenheid": "fles", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "ayumu-fish-called-wanda-100cl", "product": "Fish Called Wanda 100cl", "leverancier": "Ayumu", "eenheid": "fles", "bestelpunt": 5, "hoeveelheid": 7, "locatie": "Sterke drank, aperitief & cocktails", "verpakking": "per fles van 1 L"}, {"id": "ayumu-ginger-lemon-foam", "product": "Ginger Lemongrass foam 400ml", "leverancier": "Ayumu", "eenheid": "doos", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Sterke drank, aperitief & cocktails", "verpakking": "per doos van 8"}, {"id": "mm-antverpia-limoncello-bib-5l", "product": "Limoncello BIB 5L", "leverancier": "MM Antverpia", "eenheid": "BIB 5L", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "mm-antverpia-amaretto-bib-5l", "product": "Amaretto BIB 5L", "leverancier": "MM Antverpia", "eenheid": "BIB 5L", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "mm-antverpia-spritz-0-0-bib-5l", "product": "Spritz 0,0 BIB 5L", "leverancier": "MM Antverpia", "eenheid": "BIB 5L", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Sterke drank, aperitief & cocktails"}, {"id": "madmum-koffiebonen", "product": "Koffiebonen", "leverancier": "Madmum", "eenheid": "verpakking 10 kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee", "vastPerBestelling": true, "verpakking": "per verpakking van 10 kg"}, {"id": "onan-thee-pomegranate", "product": "Thee Pomegranate", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 2, "locatie": "Koffie & thee"}, {"id": "onan-thee-zorgeloos", "product": "Thee Zorgeloos", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee"}, {"id": "onan-thee-blanc-framboise", "product": "Thee Blanc Framboise", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee"}, {"id": "onan-thee-gunpowder", "product": "Thee Gunpowder", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee"}, {"id": "onan-thee-irish-breakfast", "product": "Thee Irish Breakfast", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee"}, {"id": "onan-chai", "product": "Chai", "leverancier": "Onan", "eenheid": "kg", "bestelpunt": 1, "hoeveelheid": 1, "locatie": "Koffie & thee"}], "lijst": {"Bees": {"cyclus": 1, "groep": false, "info": "Levering woensdag; minimum € 300"}, "Charlier": {"cyclus": 1, "groep": false, "info": "Levering woensdag; iets duurder dan BEES"}, "Madmum": {"cyclus": 1, "groep": false, "info": "Per 10 kg; levering vrijdag; lege doos meegeven"}, "Hanos": {"cyclus": 1, "groep": false, "info": "Ad hoc / afhalen"}, "Cinoco": {"cyclus": 3, "groep": true, "info": "Franco vanaf € 500"}, "De Wit": {"cyclus": 3, "groep": true, "info": "Liefst ± € 500 per bestelling; acties van de maand meenemen"}, "Artevino": {"cyclus": 3, "groep": true, "info": "Levering dinsdag"}, "Onan": {"cyclus": 3, "groep": true, "info": "Minimum € 250: zo nodig aanvullen met Pomegranate"}, "Ayumu": {"cyclus": 3, "groep": true, "info": "Gratis levering vanaf € 230; eerst bij Events checken"}, "MM Antverpia": {"cyclus": 3, "groep": true, "info": "Altijd 2 bag-in-boxen op stock (draaiboek)"}}}</script>
+<script>
+(function(){
+  "use strict";
+  var KEY = "telling-concept-v1";
+  var SEED = {items:[], lijst:{}};
+  try { SEED = JSON.parse(document.getElementById("seed").textContent); } catch(e){}
+  function metVolgorde(items){ return items.map(function(p, i){ return Object.assign({volgorde:i}, p); }); }
+  var state = { producten: metVolgorde(SEED.items || []), leveranciers: SEED.lijst || {}, aantallen: {}, tellingen: [], view: "tellen", db: undefined, user: null, me: null, kanSchrijven: true };
+
+  function el(tag, attrs, kids){
+    var n = document.createElement(tag);
+    if (attrs) for (var k in attrs){
+      if (attrs[k] == null) continue;
+      if (k === "text") n.textContent = attrs[k];
+      else if (k === "cls") n.className = attrs[k];
+      else if (k.slice(0,2) === "on") n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (kids||[]).forEach(function(c){ if (c != null) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function fmt(n){ if (n == null || n === "") return "–"; return String(Math.round(n*100)/100).replace(".", ","); }
+  function toast(t){ var d = el("div",{cls:"toast",text:t,role:"status"}); document.body.appendChild(d); setTimeout(function(){ d.remove(); }, 2200); }
+
+  document.getElementById("datum").textContent = new Date().toLocaleDateString("nl-BE",{weekday:"long",day:"numeric",month:"long"});
+
+  // concept laden
+  try { var raw = localStorage.getItem(KEY); if (raw){ var c = JSON.parse(raw); state.aantallen = c.aantallen || {}; state.extra = c.extra || ""; } } catch(e){}
+  var extraVeld = document.getElementById("extra");
+  extraVeld.value = state.extra || "";
+  extraVeld.addEventListener("input", function(){ state.extra = extraVeld.value; bewaarConcept(); });
+  var VKEY = "telling-vorige-v1";
+  state.vorige = null;
+  try { var rv = localStorage.getItem(VKEY); if (rv) state.vorige = JSON.parse(rv); } catch(e){}
+  function zetVorige(datum, aantallen){
+    if (!aantallen || !Object.keys(aantallen).length) return;
+    if (state.vorige && state.vorige.datum && datum && state.vorige.datum >= datum && state.vorige.aantallen) return;
+    state.vorige = {datum: datum, aantallen: Object.assign({}, aantallen)};
+    try { localStorage.setItem(VKEY, JSON.stringify(state.vorige)); } catch(e){}
+    Object.keys(rijen).forEach(function(id){ toonVorige(rijen[id]); });
+  }
+  function vorigeVan(p){ var v = state.vorige && state.vorige.aantallen ? state.vorige.aantallen[p.id] : undefined; return typeof v === "number" ? v : null; }
+  function korteDatum(iso){ try { var d = new Date(iso); return d.toLocaleDateString("nl-BE",{day:"numeric",month:"numeric"}) + " " + d.toLocaleTimeString("nl-BE",{hour:"2-digit",minute:"2-digit"}); } catch(e){ return ""; } }
+  function toonVorige(r){
+    var v = vorigeVan(r.p);
+    r.vorig.hidden = v == null;
+    if (v != null) r.vorig.textContent = "vorige: " + fmt(v) + (state.vorige.datum ? " (" + korteDatum(state.vorige.datum) + ")" : "");
+  }
+  function bewaarConcept(){ try { localStorage.setItem(KEY, JSON.stringify({aantallen: state.aantallen, extra: state.extra || "", bijgewerkt: Date.now()})); } catch(e){} }
+
+  // ---------- berekening ----------
+  function berekening(){
+    var perLev = {};
+    state.producten.forEach(function(p){
+      var a = state.aantallen[p.id];
+      var geteld = typeof a === "number" && !isNaN(a);
+      var laag = geteld && a < p.bestelpunt;
+      (perLev[p.leverancier] = perLev[p.leverancier] || {items:[], laag:0, ongeteld:0}).items.push({p:p, a:geteld?a:null, laag:laag});
+      if (laag) perLev[p.leverancier].laag++;
+      if (!geteld) perLev[p.leverancier].ongeteld++;
+    });
+    Object.keys(perLev).forEach(function(l){
+      var info = state.leveranciers[l] || {};
+      var g = perLev[l]; g.groep = !!info.groep; g.info = info.info || ""; g.bestellen = g.laag > 0;
+      g.items.forEach(function(it){
+        var trig = g.groep ? g.bestellen : it.laag;
+        it.qty = 0;
+        if (trig && it.a != null){
+          if (it.p.vastPerBestelling) it.qty = it.p.hoeveelheid;
+          else { var q = it.p.bestelpunt + it.p.hoeveelheid - it.a; it.qty = q > 0 ? Math.ceil(q - 1e-9) : 0; }
+        }
+        it.ongeteldTeBestellen = trig && it.a == null;
+      });
+    });
+    return perLev;
+  }
+
+  // ---------- tellen ----------
+  var rijen = {};
+  function renderLijst(){
+    var box = document.getElementById("lijst"); box.textContent = "";
+    rijen = {};
+    if (!state.producten.length){ box.appendChild(el("div",{cls:"empty",text: state.db === undefined ? "De productlijst wordt geladen…" : state.db ? "Er staan nog geen producten in de lijst. Vraag Fien om de productlijst in te laden." : "De productlijst kan niet geladen worden. Open deze pagina via claude.ai met je account."})); return; }
+    var groepen = [], idx = {};
+    state.producten.slice().sort(function(a,b){ return a.volgorde - b.volgorde; }).forEach(function(p){
+      var k = p.locatie || "Overig";
+      if (!(k in idx)){ idx[k] = groepen.length; groepen.push({naam:k, items:[]}); }
+      groepen[idx[k]].items.push(p);
+    });
+    groepen.forEach(function(g){
+      var lijst = el("div",{cls:"list"});
+      var tel = el("small");
+      g.items.forEach(function(p){ var r = maakRij(p); rijen[p.id] = r; lijst.appendChild(r.node); });
+      var sec = el("section",{cls:"loc"},[el("h2",null,[g.naam, tel]), lijst]);
+      sec._tel = tel; sec._items = g.items;
+      box.appendChild(sec);
+    });
+    filter(); tellers();
+  }
+  function maakRij(p){
+    var input = el("input",{type:"text",inputmode:"numeric",pattern:"[0-9]*",id:"in-"+p.id,"aria-label":"Voorraad "+p.product,placeholder:"–",autocomplete:"off"});
+    var a = state.aantallen[p.id]; if (typeof a === "number"){ a = Math.floor(a); state.aantallen[p.id] = a; input.value = fmt(a); }
+    var pill = el("span",{cls:"pill"});
+    var vorig = el("button",{type:"button",cls:"vorig",title:"Tik om dit aantal over te nemen",onclick:function(){ var v = vorigeVan(p); if (v != null) zet(p, v); }});
+    vorig.hidden = true;
+    var meta = el("div",{cls:"pmeta"},[el("span",{text:"bestelpunt "+fmt(p.bestelpunt)}), vorig, pill]);
+    if (p.leverancier) meta.insertBefore(el("span",{text:p.leverancier}), meta.firstChild);
+    var node = el("div",{cls:"row"},[
+      el("div",{style:"min-width:0"},[el("div",{cls:"pname"},[p.product + " ", el("span",{cls:"verp",text:"(" + verpakking(p) + ")"})]), meta]),
+      el("div",{cls:"step"},[
+        el("button",{type:"button","aria-label":"Eén minder "+p.product,text:"−",onclick:function(){ zet(p, (huidig(p)||0) - 1); }}),
+        input,
+        el("button",{type:"button","aria-label":"Eén meer "+p.product,text:"+",onclick:function(){ zet(p, (huidig(p)==null?0:huidig(p)) + 1); }})
+      ])
+    ]);
+    input.addEventListener("change", function(){
+      if (!input.isConnected || rijen[p.id] !== r) return;
+      var v = input.value.trim().replace(",", ".");
+      if (v === ""){ delete state.aantallen[p.id]; } else { var n = Math.floor(parseFloat(v)); if (isNaN(n) || n < 0){ input.value = fmt(state.aantallen[p.id]); return; } state.aantallen[p.id] = n; }
+      bewaarConcept(); werkRijBij(p); tellers();
+    });
+    var r = {node:node, input:input, pill:pill, vorig:vorig, p:p};
+    toonVorige(r);
+    setTimeout(function(){ werkRijBij(p); }, 0);
+    return r;
+  }
+  function verpakking(p){
+    if (p.verpakking) return p.verpakking;
+    var e = String(p.eenheid || "").trim(), m;
+    if ((m = e.match(/^bak\s*(\d+)/i))) return "per bak van " + m[1];
+    if ((m = e.match(/^doos\s*(\d+)/i))) return "per doos van " + m[1];
+    if (/^doos$/i.test(e)) return "per doos";
+    if (/^fles/i.test(e)) return "per fles";
+    if (/^vat/i.test(e)) return "per vat";
+    if ((m = e.match(/^BIB\s*(.*)/i))) return "per bag-in-box" + (m[1] ? " van " + m[1] : "");
+    if (/^kg$/i.test(e)) return "per kg";
+    return e ? "per " + e : "";
+  }
+  function huidig(p){ var a = state.aantallen[p.id]; return typeof a === "number" ? a : null; }
+  function zet(p, n){ if (n < 0) n = 0; state.aantallen[p.id] = n; rijen[p.id].input.value = fmt(n); bewaarConcept(); werkRijBij(p); tellers(); }
+  function werkRijBij(p){
+    var r = rijen[p.id]; if (!r) return;
+    var a = huidig(p);
+    r.node.classList.toggle("low", a != null && a < p.bestelpunt);
+    if (a == null){ r.pill.textContent = ""; r.pill.className = "pill"; }
+    else if (a < p.bestelpunt){ r.pill.textContent = "onder bestelpunt"; r.pill.className = "pill low"; }
+    else { r.pill.textContent = "ok"; r.pill.className = "pill ok"; }
+    if (document.getElementById("opennog").checked) filter();
+  }
+  function tellers(){
+    var tot = state.producten.length, n = 0, laag = 0;
+    state.producten.forEach(function(p){ var a = huidig(p); if (a != null){ n++; if (a < p.bestelpunt) laag++; } });
+    document.getElementById("teller").textContent = n;
+    document.getElementById("teller-tot").textContent = "van " + tot + " geteld";
+    document.getElementById("teller-laag").textContent = laag + " onder bestelpunt";
+    document.getElementById("fill").style.width = tot ? (100*n/tot) + "%" : "0";
+    document.querySelectorAll(".loc").forEach(function(s){
+      if (!s._items) return;
+      var g = s._items.filter(function(p){ return huidig(p) != null; }).length;
+      s._tel.textContent = g + " / " + s._items.length;
+    });
+  }
+  function filter(){
+    var q = document.getElementById("zoek").value.trim().toLowerCase();
+    var open = document.getElementById("opennog").checked;
+    document.querySelectorAll(".loc").forEach(function(s){
+      if (!s._items) return;
+      var zicht = 0;
+      s._items.forEach(function(p){
+        var r = rijen[p.id];
+        var tonen = (!q || (p.product + " " + p.leverancier).toLowerCase().indexOf(q) >= 0) && (!open || huidig(p) == null);
+        r.node.hidden = !tonen; if (tonen) zicht++;
+      });
+      s.hidden = zicht === 0;
+    });
+  }
+  document.getElementById("zoek").addEventListener("input", filter);
+  document.getElementById("opennog").addEventListener("change", filter);
+  var resetBox = document.getElementById("reset-confirm");
+  document.getElementById("reset").addEventListener("click", function(){ resetBox.hidden = false; });
+  document.getElementById("reset-nee").addEventListener("click", function(){ resetBox.hidden = true; });
+  document.getElementById("reset-ja").addEventListener("click", function(){
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    zetVorige(new Date().toISOString(), state.aantallen);
+    state.aantallen = {}; state.extra = ""; extraVeld.value = ""; bewaarConcept();
+    resetBox.hidden = true; bevestigOpen = false; renderLijst();
+    setTimeout(function(){ if (Object.keys(state.aantallen).length){ state.aantallen = {}; bewaarConcept(); renderLijst(); } }, 50);
+    toast("Lijst leeggemaakt");
+  });
+
+  // ---------- bestellijst ----------
+  var bevestigOpen = false;
+  function renderBestel(){
+    var box = document.getElementById("bestel"); box.textContent = "";
+    if (!state.producten.length){ box.appendChild(el("div",{cls:"empty",text:"Nog geen producten."})); return; }
+    var b = berekening();
+    box.appendChild(el("div",{style:"display:flex;gap:10px;flex-wrap:wrap;margin-top:6px"},[
+      el("button",{cls:"btn",type:"button",text:"Kopieer volledige bestellijst",onclick:function(){ kopieerAlles(b); }}),
+      el("button",{cls:"btn ghost",type:"button",text:"Download als Excel",onclick:function(){ downloadExcel(b); }})
+    ]));
+    var namen = Object.keys(b).sort(function(x,y){ return (b[y].bestellen - b[x].bestellen) || x.localeCompare(y); });
+    namen.forEach(function(l){
+      var g = b[l];
+      var tag = g.bestellen ? el("span",{cls:"tag go",text:"Bestellen"}) : (g.ongeteld === g.items.length ? el("span",{cls:"tag warn",text:"Nog niet geteld"}) : el("span",{cls:"tag no",text:"Niets nodig"}));
+      var regels = g.items.filter(function(it){ return g.groep ? true : (it.laag || it.ongeteldTeBestellen); });
+      var kop = el("div",{cls:"sup-h"},[
+        el("div",null,[el("h3",{text:l}), el("p",{text:(g.groep?"Om de 3 weken · groepsbestelling":"Wekelijks") + (g.info ? " · " + g.info : "")})]),
+        el("div",{style:"display:flex;gap:8px;align-items:center;flex-wrap:wrap"},[ tag, g.bestellen ? el("button",{cls:"btn ghost",type:"button",text:"Kopieer",onclick:function(){ kopieer(l, g); }}) : null ])
+      ]);
+      var card = el("div",{cls:"sup" + (g.bestellen ? " go" : "")},[kop]);
+      if (g.bestellen){
+        var tb = el("tbody");
+        regels.sort(function(x,y){ return (y.qty>0) - (x.qty>0); }).forEach(function(it){
+          var tr = el("tr",{cls: it.qty > 0 || it.ongeteldTeBestellen ? "" : "zero"},[
+            el("td",null,[el("div",{text:it.p.product, style: it.laag ? "color:var(--bad);font-weight:600" : ""}), el("div",{cls:"pmeta",text:verpakking(it.p)})]),
+            el("td",{cls:"n",text:fmt(it.a)}),
+            el("td",{cls:"n",text:fmt(it.p.bestelpunt)}),
+            el("td",{cls:"n big",text: it.ongeteldTeBestellen ? "tel eerst" : (it.qty ? String(it.qty) : "–")})
+          ]);
+          tb.appendChild(tr);
+        });
+        card.appendChild(el("div",{cls:"scroll"},[el("table",{cls:"tbl"},[el("thead",null,[el("tr",null,[el("th",{text:"Product"}),el("th",{cls:"n",text:"Geteld"}),el("th",{cls:"n",text:"Bestelpunt"}),el("th",{cls:"n",text:"Bestellen"})])]), tb])]));
+      } else if (g.ongeteld){
+        card.appendChild(el("p",{cls:"note",style:"padding:0 14px 12px",text:g.ongeteld + " van " + g.items.length + " producten nog niet geteld."}));
+      }
+      box.appendChild(card);
+    });
+    renderOpslaan(b);
+  }
+  function regelsTekst(l, g){
+    return g.items.filter(function(it){ return it.qty > 0; }).map(function(it){ return it.p.product + " × " + it.qty + " (" + verpakking(it.p) + ")"; });
+  }
+  function kopieer(l, g){
+    var t = "Bestelling De Hoorn Grand Café – " + l + "\n" + regelsTekst(l, g).join("\n");
+    var klaar = function(){ toast("Bestellijst " + l + " gekopieerd"); };
+    try { navigator.clipboard.writeText(t).then(klaar, function(){ toonTekst(t); }); } catch(e){ toonTekst(t); }
+  }
+  function kopieerAlles(b){
+    var delen = [];
+    Object.keys(b).sort().forEach(function(l){ if (b[l].bestellen){ var r = regelsTekst(l, b[l]); if (r.length) delen.push(l + "\n" + r.join("\n")); } });
+    var n = state.producten.filter(function(p){ return huidig(p) != null; }).length;
+    var t = "Bestellijst De Hoorn Grand Café – telling " + new Date().toLocaleDateString("nl-BE") + " (" + n + " van " + state.producten.length + " producten geteld)\n\n" + (delen.length ? delen.join("\n\n") : "Niets te bestellen.") + ((state.extra || "").trim() ? "\n\nOntbreekt op de lijst / extra:\n" + state.extra.trim() : "");
+    try { navigator.clipboard.writeText(t).then(function(){ toast("Volledige bestellijst gekopieerd"); }, function(){ toonTekst(t); }); } catch(e){ toonTekst(t); }
+  }
+  function downloadExcel(b){
+    var vandaag = new Date();
+    var iso = vandaag.getFullYear() + "-" + String(vandaag.getMonth()+1).padStart(2,"0") + "-" + String(vandaag.getDate()).padStart(2,"0");
+    var best = [["Bestellijst De Hoorn Grand Café – telling " + vandaag.toLocaleDateString("nl-BE")], [], ["Leverancier","Product","Verpakking","Geteld","Bestelpunt","Te bestellen"]];
+    Object.keys(b).sort().forEach(function(l){
+      if (!b[l].bestellen) return;
+      b[l].items.forEach(function(it){
+        if (it.qty > 0 || it.ongeteldTeBestellen) best.push([l, it.p.product, verpakking(it.p), it.a == null ? "niet geteld" : it.a, it.p.bestelpunt, it.ongeteldTeBestellen ? "tel eerst" : it.qty]);
+      });
+    });
+    if (best.length === 3) best.push(["Niets te bestellen"]);
+    if ((state.extra || "").trim()){ best.push([]); best.push(["Ontbreekt op de lijst / extra"]); state.extra.trim().split(/\n+/).forEach(function(r){ best.push([r]); }); }
+    var tel = [["Opslagplek","Product","Verpakking","Leverancier","Geteld","Vorige telling","Bestelpunt","Onder bestelpunt"]];
+    state.producten.slice().sort(function(x,y){ return x.volgorde - y.volgorde; }).forEach(function(p){
+      var a = huidig(p);
+      var vv = vorigeVan(p);
+      tel.push([p.locatie || "", p.product, verpakking(p), p.leverancier, a == null ? "" : a, vv == null ? "" : vv, p.bestelpunt, a == null ? "" : (a < p.bestelpunt ? "ja" : "nee")]);
+    });
+    var saver = state.downloads || (window.claude ? null : { save: function(r){ return new Promise(function(ok, fail){
+      try {
+        var ext = r.filename.split(".").pop();
+        var type = ext === "xlsx" ? "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" : "text/csv;charset=utf-8";
+        var url = URL.createObjectURL(new Blob([r.data], {type: type}));
+        var a = document.createElement("a"); a.href = url; a.download = r.filename; document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 4000); ok({status:"saved"});
+      } catch(e){ fail({code:"unavailable"}); }
+    }); } });
+    if (!saver){ toast("Downloaden kan niet in deze weergave. Gebruik Kopieer volledige bestellijst."); return; }
+    if (!window.XLSX){
+      var csv = best.concat([[]], [["Telling"]], tel).map(function(r){ return r.map(function(c){ c = c == null ? "" : String(c); return /[;"\n]/.test(c) ? '"' + c.replace(/"/g,'""') + '"' : c; }).join(";"); }).join("\r\n");
+      saver.save({filename: "Bestellijst Grand Cafe " + iso + ".csv", data: "﻿" + csv}).then(function(){ toast("Bestand bewaard"); }, function(e){ if (!e || e.code !== "declined") toast("Downloaden lukt niet op dit toestel. Gebruik Kopieer."); });
+      return;
+    }
+    var wb = XLSX.utils.book_new();
+    var s1 = XLSX.utils.aoa_to_sheet(best); s1["!cols"] = [{wch:14},{wch:34},{wch:22},{wch:11},{wch:11},{wch:13}];
+    var s2 = XLSX.utils.aoa_to_sheet(tel); s2["!cols"] = [{wch:30},{wch:34},{wch:22},{wch:14},{wch:9},{wch:14},{wch:11},{wch:16}];
+    XLSX.utils.book_append_sheet(wb, s1, "Bestellijst");
+    XLSX.utils.book_append_sheet(wb, s2, "Telling");
+    var data = XLSX.write(wb, {bookType:"xlsx", type:"array"});
+    saver.save({filename: "Bestellijst Grand Cafe " + iso + ".xlsx", data: data}).then(function(){ toast("Excel-bestand bewaard"); }, function(e){
+      if (e && e.code === "declined") return;
+      if (e && e.code === "rate_limited") { toast("Even wachten en opnieuw proberen"); return; }
+      toast("Downloaden lukt niet op dit toestel. Gebruik Kopieer.");
+    });
+  }
+  function toonTekst(t){
+    var ta = el("textarea",{rows:"8",style:"width:100%;font:inherit;margin-top:12px;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg)"});
+    ta.value = t; document.getElementById("bestel").prepend(ta); ta.select(); toast("Selecteer en kopieer de tekst");
+  }
+  function renderOpslaan(b){
+    var z = document.getElementById("opslaan-zone"); z.textContent = "";
+    var n = state.producten.filter(function(p){ return huidig(p) != null; }).length;
+    if (!state.db){ z.appendChild(el("p",{cls:"note",text:"Opslaan in de app is hier niet beschikbaar. Kopieer de volledige bestellijst en stuur ze door via WhatsApp of mail."})); return; }
+    if (!state.kanSchrijven){ z.appendChild(el("p",{cls:"note",text:"Je kunt deze telling bekijken, maar niet opslaan."})); return; }
+    if (bevestigOpen){
+      z.appendChild(el("div",{cls:"confirm"},[
+        el("p",{text: n + " van " + state.producten.length + " producten geteld. Telling opslaan en een nieuwe lege telling starten?"}),
+        el("button",{cls:"btn",type:"button",text:"Ja, opslaan",onclick:function(){ opslaan(b); }}),
+        el("button",{cls:"btn ghost",type:"button",text:"Annuleren",onclick:function(){ bevestigOpen = false; renderOpslaan(b); }})
+      ]));
+    } else {
+      z.appendChild(el("div",{style:"margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"},[
+        el("button",{cls:"btn",type:"button",id:"opslaan",text:"Telling opslaan",disabled: n ? null : "disabled",onclick:function(){ bevestigOpen = true; renderOpslaan(b); }})
+      ]));
+    }
+  }
+  function opslaan(b){
+    var bestelling = {};
+    Object.keys(b).forEach(function(l){ var r = b[l].items.filter(function(it){ return it.qty > 0; }).map(function(it){ return {product: it.p.product, eenheid: it.p.eenheid, aantal: it.qty}; }); if (r.length) bestelling[l] = r; });
+    var doc = { datum: new Date().toISOString(), door: state.me || null, aantallen: Object.assign({}, state.aantallen), bestelling: bestelling, aantalGeteld: Object.keys(state.aantallen).length, extra: (state.extra || "").trim() };
+    var knop = document.querySelector("#opslaan-zone .btn"); if (knop) knop.disabled = true;
+    state.db.collection("tellingen").add(doc).then(function(){
+      zetVorige(doc.datum, doc.aantallen);
+      state.aantallen = {}; state.extra = ""; extraVeld.value = ""; bewaarConcept(); bevestigOpen = false;
+      renderLijst(); toast("Telling opgeslagen"); kies("hist");
+    }, function(e){
+      if (knop) knop.disabled = false;
+      if (e && e.code === "invalid_argument"){ state.kanSchrijven = false; toast("Je hebt geen rechten om op te slaan"); }
+      else if (e && e.code === "quota_exceeded") toast("De opslag is vol. Laat Fien oude tellingen opruimen.");
+      else toast("Opslaan lukte niet. Probeer opnieuw.");
+      renderOpslaan(b);
+    });
+  }
+
+  // ---------- geschiedenis ----------
+  function renderHist(){
+    var box = document.getElementById("hist"); box.textContent = "";
+    if (!state.tellingen.length){ box.appendChild(el("div",{cls:"empty",text:state.db ? "Nog geen opgeslagen tellingen. Na het tellen sla je de telling op via de Bestellijst." : "Vorige tellingen zijn enkel zichtbaar wanneer je aangemeld bent."})); return; }
+    var ids = state.tellingen.map(function(t){ return t.door; }).filter(Boolean);
+    var namenP = (state.user && ids.length) ? state.user.profiles(ids) : Promise.resolve({});
+    namenP.then(function(ps){
+      box.textContent = "";
+      state.tellingen.forEach(function(t){
+        var d = new Date(t.datum);
+        var wie = t.door && ps[t.door] ? (ps[t.door].name || "Iemand") : "Iemand";
+        var lev = Object.keys(t.bestelling || {});
+        var body = el("div",{cls:"body"});
+        if (!lev.length) body.appendChild(el("p",{cls:"note",text:"Niets te bestellen bij deze telling."}));
+        if (t.extra){ body.appendChild(el("p",{style:"margin:8px 0 2px;font-weight:700",text:"Ontbreekt op de lijst / extra"})); body.appendChild(el("p",{cls:"note",style:"margin:0;white-space:pre-wrap",text:t.extra})); }
+        lev.forEach(function(l){
+          body.appendChild(el("p",{style:"margin:8px 0 2px;font-weight:700",text:l}));
+          body.appendChild(el("p",{cls:"note",style:"margin:0",text:t.bestelling[l].map(function(r){ return r.product + " × " + r.aantal; }).join(" · ")}));
+        });
+        box.appendChild(el("details",{cls:"hist"},[
+          el("summary",null,[el("div",{text:d.toLocaleDateString("nl-BE",{weekday:"short",day:"numeric",month:"short"}) + " " + d.toLocaleTimeString("nl-BE",{hour:"2-digit",minute:"2-digit"})}), el("span",{text: wie + " · " + (t.aantalGeteld||0) + " geteld · " + lev.length + " leveranciers"})]),
+          body
+        ]));
+      });
+    });
+  }
+
+  // ---------- tabs ----------
+  function kies(v){
+    state.view = v;
+    ["tellen","bestel","hist"].forEach(function(x){
+      document.getElementById("v-"+x).hidden = x !== v;
+      document.querySelector('[data-view="'+x+'"]').setAttribute("aria-selected", String(x === v));
+    });
+    if (v === "bestel") renderBestel();
+    if (v === "hist") renderHist();
+    document.getElementById("naar-bestel").textContent = v === "tellen" ? "Bestellijst" : "Verder tellen";
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll("nav button").forEach(function(b){ b.addEventListener("click", function(){ kies(b.getAttribute("data-view")); }); });
+  document.getElementById("naar-bestel").addEventListener("click", function(){ kies(state.view === "tellen" ? "bestel" : "tellen"); });
+
+  renderLijst();
+
+  // ---------- data ----------
+  if (!(window.claude && window.claude.use)){ state.db = null; renderLijst(); }
+  if (window.claude && window.claude.use){
+    window.claude.use("user").then(function(u){
+      state.user = u;
+      if (!u) return;
+      u.id().then(function(id){ state.me = id; });
+      u.can("data.write").then(function(c){ if (c === false){ state.kanSchrijven = false; if (state.view === "bestel") renderBestel(); } });
+    });
+    window.claude.use("downloads").then(function(d){ state.downloads = d; if (state.view === "bestel") renderBestel(); });
+    window.claude.use("db").then(function(db){
+      state.db = db;
+      if (!db){ renderLijst(); return; }
+      db.doc("config/producten").onSnapshot(function(s){
+        var d = s.exists ? s.data() : null;
+        if (d && Array.isArray(d.items) && d.items.length) state.producten = metVolgorde(d.items);
+        renderLijst(); if (state.view === "bestel") renderBestel();
+      }, function(){ renderLijst(); });
+      db.doc("config/leveranciers").onSnapshot(function(s){
+        if (s.exists && s.data().lijst) state.leveranciers = s.data().lijst;
+        if (state.view === "bestel") renderBestel();
+      });
+      db.collection("tellingen").orderBy("datum","desc").limit(30).onSnapshot(function(q){
+        state.tellingen = q.docs.map(function(d){ return d.data(); });
+        if (state.tellingen[0]) zetVorige(state.tellingen[0].datum, state.tellingen[0].aantallen);
+        if (state.view === "hist") renderHist();
+      });
+    });
+  }
+})();
+</script>
+
+</body></html>

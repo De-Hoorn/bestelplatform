@@ -1,0 +1,54 @@
+{
+  "lijst": {
+    "Artevino": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Levering dinsdag"
+    },
+    "Ayumu": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Gratis levering vanaf € 230; eerst bij Events checken"
+    },
+    "Bees": {
+      "cyclus": 1,
+      "groep": false,
+      "info": "Levering woensdag; minimum € 300"
+    },
+    "Charlier": {
+      "cyclus": 1,
+      "groep": false,
+      "info": "Levering woensdag; iets duurder dan BEES"
+    },
+    "Cinoco": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Franco vanaf € 500"
+    },
+    "De Wit": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Liefst ± € 500 per bestelling; acties van de maand meenemen"
+    },
+    "Hanos": {
+      "cyclus": 1,
+      "groep": false,
+      "info": "Ad hoc / afhalen"
+    },
+    "MM Antverpia": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Altijd 2 bag-in-boxen op stock (draaiboek)"
+    },
+    "Madmum": {
+      "cyclus": 1,
+      "groep": false,
+      "info": "Per 10 kg; levering vrijdag; lege doos meegeven"
+    },
+    "Onan": {
+      "cyclus": 3,
+      "groep": true,
+      "info": "Minimum € 250: zo nodig aanvullen met Pomegranate"
+    }
+  }
+}

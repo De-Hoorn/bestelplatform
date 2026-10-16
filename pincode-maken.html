@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pincode maken</title>
+<style>
+:root{--bg:#f3f5f2;--surface:#fff;--fg:#1d2420;--muted:#5d6a62;--line:#d3dad3;--accent:#1f5c45;--accent-fg:#fff}
+@media (prefers-color-scheme: dark){:root{--bg:#121614;--surface:#1b211e;--fg:#e7ece8;--muted:#9aa7a0;--line:#2f3833;--accent:#6fbf98;--accent-fg:#0f1a14}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 "Segoe UI",Roboto,Arial,sans-serif;padding:24px 16px}
+main{max-width:520px;margin:0 auto}
+h1{font-size:26px;margin:0 0 6px}
+p{color:var(--muted);margin:0 0 18px}
+label{display:block;font-weight:600;margin:14px 0 4px}
+input{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg)}
+button{margin-top:18px;font:inherit;font-weight:600;padding:12px 18px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-fg);cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-all;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px;margin-top:18px}
+.fout{color:#b3261e;font-weight:600}
+</style>
+</head>
+<body>
+<main>
+  <h1>Pincode maken</h1>
+  <p>Maak een regel voor een nieuwe gebruiker. Plak die regel in <code>config.js</code> onder <code>gebruikers</code>. De pincode zelf wordt nergens bewaard of verstuurd.</p>
+  <form id="f">
+    <label for="naam">Naam</label>
+    <input id="naam" required autocomplete="off" placeholder="bv. Fien">
+    <label for="pin">Pincode</label>
+    <input id="pin" required inputmode="numeric" autocomplete="off" placeholder="cijfers">
+    <button type="submit">Maak regel</button>
+  </form>
+  <pre id="uit" hidden></pre>
+</main>
+<script src="config.js"></script>
+<script>
+(function(){
+  var cfg = window.DH_CONFIG || {};
+  var ZOUT = cfg.pinZout || "dehoorn-bestellingen", LEN = cfg.pinLengte || 4;
+  document.getElementById("pin").placeholder = LEN + " cijfers";
+  function hash(id, pin){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(ZOUT + ":" + id + ":" + pin)).then(function(b){
+      return Array.from(new Uint8Array(b)).map(function(x){ return x.toString(16).padStart(2,"0"); }).join("");
+    });
+  }
+  document.getElementById("f").addEventListener("submit", function(e){
+    e.preventDefault();
+    var naam = document.getElementById("naam").value.trim();
+    var pin = document.getElementById("pin").value.trim();
+    var uit = document.getElementById("uit"); uit.hidden = false; uit.className = "";
+    if (!new RegExp("^[0-9]{" + LEN + "}$").test(pin)){ uit.className = "fout"; uit.textContent = "De pincode moet precies " + LEN + " cijfers zijn."; return; }
+    var id = naam.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+    if (!id){ uit.className = "fout"; uit.textContent = "Geef een naam in."; return; }
+    hash(id, pin).then(function(h){
+      uit.textContent = '{ id: "' + id + '", naam: "' + naam.replace(/"/g,"") + '", pinHash: "' + h + '" },';
+      document.getElementById("pin").value = "";
+    });
+  });
+})();
+</script>
+</body>
+</html>

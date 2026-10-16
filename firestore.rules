@@ -1,0 +1,16 @@
+rules_version = '2';
+// VOORLOPIG – enkel voor de testfase. Verstrengen (aanmelden verplicht)
+// voordat de app breed gebruikt wordt.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /config/{doc} {
+      allow read: if true;
+      allow write: if false;            // productlijst enkel via de console
+    }
+    match /tellingen/{id} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if false;
+    }
+  }
+}

@@ -1,0 +1,901 @@
+{
+  "bron": "Min-max Bestelvoorstel_dranken_wk42_2026_def.xlsx (16/10/2026)",
+  "items": [
+    {
+      "bestelpunt": 3,
+      "eenheid": "vat 20L",
+      "hoeveelheid": 2,
+      "id": "bees-karmeliet-vat-20l",
+      "leverancier": "Bees",
+      "locatie": "Vaten",
+      "product": "Karmeliet vat 20L"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-leffe-blond-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Leffe blond 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-leffe-bruin-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Leffe bruin 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-leffe-0-0-blond-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Leffe 0,0 blond 33cl"
+    },
+    {
+      "bestelpunt": 3,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "bees-omer-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Omer 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-brugse-zot-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Brugse Zot 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-kriek-lindemans-25cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Kriek Lindemans 25cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-hoegaarden-25cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Hoegaarden 25cl"
+    },
+    {
+      "bestelpunt": 7,
+      "eenheid": "bak 24",
+      "hoeveelheid": 5,
+      "id": "bees-duvel-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Duvel 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-delvaux-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Delvaux 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-victoria-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Victoria 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-westmalle-tripel-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Westmalle Tripel 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "bees-westmalle-dubbel-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Westmalle Dubbel 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-orval-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Orval 33cl"
+    },
+    {
+      "bestelpunt": 6,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "bees-stella-0-0-25cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Stella 0,0 25cl"
+    },
+    {
+      "bestelpunt": 3,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "bees-sportzot-0-0-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Sportzot 0,0 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 12",
+      "hoeveelheid": 1,
+      "id": "bees-oude-geuze-boon-37-5cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Oude Geuze Boon 37,5cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-seefbier-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Seefbier 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-vedett-ipa-33cl",
+      "leverancier": "Bees",
+      "locatie": "Bier (bakken)",
+      "product": "Vedett IPA 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-st-bernardus-tripel-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "St-Bernardus Tripel 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-st-bernardus-abt-12-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "St-Bernardus Abt 12 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-ruwet-cider-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "Ruwet cider 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-karmeliet-0-4-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "Karmeliet 0,4% 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-liefmans-0-0-25cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "Liefmans 0,0 25cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 12",
+      "hoeveelheid": 1,
+      "id": "charlier-paix-dieu-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Bier (bakken)",
+      "product": "Paix Dieu 33cl"
+    },
+    {
+      "bestelpunt": 8,
+      "eenheid": "bak 24",
+      "hoeveelheid": 4,
+      "id": "bees-coca-cola-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Coca-Cola 20cl"
+    },
+    {
+      "bestelpunt": 10,
+      "eenheid": "bak 24",
+      "hoeveelheid": 4,
+      "id": "bees-coca-cola-zero-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Coca-Cola Zero 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-fanta-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Fanta 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-sprite-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Sprite 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-minute-maid-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Minute Maid 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-gini-20cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Gini 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-chaudfontaine-plat-25cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Chaudfontaine plat 25cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-chaudfontaine-bruis-25cl",
+      "leverancier": "Bees",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Chaudfontaine bruis 25cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-papegaei-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Papegaei 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-almdudler-35cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Almdudler 35cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-thrive-peak-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Thrive Peak 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-thrive-play-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Thrive Play 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-thrive-unwind-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Thrive Unwind 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-ritchie-citroen-27-5cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Ritchie citroen 27,5cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-ritchie-pompelmoes-27-5cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Ritchie pompelmoes 27,5cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "charlier-crodino-17-5cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Crodino 17,5cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 12",
+      "hoeveelheid": 1,
+      "id": "charlier-lemonaid-passievrucht-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Lemonaid passievrucht 33cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 12",
+      "hoeveelheid": 1,
+      "id": "charlier-lemonaid-bloedappelsien-33cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Lemonaid bloedappelsien 33cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "BIB 5L",
+      "hoeveelheid": 1,
+      "id": "charlier-appelsap-hoogveld-bib-5l",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Appelsap Hoogveld BIB 5L"
+    },
+    {
+      "bestelpunt": 4,
+      "eenheid": "fles 75cl",
+      "hoeveelheid": 2,
+      "id": "charlier-appel-rodebietsap-75cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Appel-rodebietsap 75cl"
+    },
+    {
+      "bestelpunt": 6,
+      "eenheid": "bak 24",
+      "hoeveelheid": 9,
+      "id": "cinoco-hysope-tonic-original-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope tonic (original) 20cl"
+    },
+    {
+      "bestelpunt": 5,
+      "eenheid": "bak 24",
+      "hoeveelheid": 7,
+      "id": "cinoco-hysope-ginger-beer-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope ginger beer 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "cinoco-hysope-ginger-ale-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope ginger ale 20cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "hanos-prosecco-mionetto-75cl",
+      "leverancier": "Hanos",
+      "locatie": "Wijn & bubbels",
+      "product": "Prosecco Mionetto 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "cinoco-champagne-ayala-75cl",
+      "leverancier": "Cinoco",
+      "locatie": "Wijn & bubbels",
+      "product": "Champagne Ayala 75cl"
+    },
+    {
+      "bestelpunt": 4,
+      "eenheid": "doos 6",
+      "hoeveelheid": 6,
+      "id": "cinoco-buglioni-il-mona-75cl",
+      "leverancier": "Cinoco",
+      "locatie": "Wijn & bubbels",
+      "product": "Buglioni Il Mona 75cl"
+    },
+    {
+      "bestelpunt": 3,
+      "eenheid": "doos 6",
+      "hoeveelheid": 4,
+      "id": "cinoco-alie-rose-75cl",
+      "leverancier": "Cinoco",
+      "locatie": "Wijn & bubbels",
+      "product": "Alìe rosé 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "cinoco-aix-rose-75cl",
+      "leverancier": "Cinoco",
+      "locatie": "Wijn & bubbels",
+      "product": "AIX rosé 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "cinoco-zanut-malvazija-75cl",
+      "leverancier": "Cinoco",
+      "locatie": "Wijn & bubbels",
+      "product": "Zanut Malvazija 75cl"
+    },
+    {
+      "bestelpunt": 10,
+      "eenheid": "doos 6",
+      "hoeveelheid": 14,
+      "id": "artevino-ijalba-viura-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Ijalba Viura 75cl"
+    },
+    {
+      "bestelpunt": 7,
+      "eenheid": "doos 6",
+      "hoeveelheid": 10,
+      "id": "artevino-cava-gran-campo-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Cava Gran Campo 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "artevino-spumante-la-jara-rose-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Spumante La Jara rosé 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 2,
+      "id": "artevino-nuna-malbec-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Nuna Malbec 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "artevino-cultus-merlot-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Cultus Merlot 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "artevino-il-palagio-chianti-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Il Palagio Chianti 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos 6",
+      "hoeveelheid": 1,
+      "id": "artevino-roter-veltliner-75cl",
+      "leverancier": "Artevino",
+      "locatie": "Wijn & bubbels",
+      "product": "Roter Veltliner 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "bees-royal-bliss-agrum-20cl",
+      "leverancier": "Bees",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Royal Bliss Agrum 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "charlier-rum-havana-especial-100cl",
+      "leverancier": "Charlier",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Rum Havana Especial 100cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "charlier-whisky-gouden-carolus-70cl",
+      "leverancier": "Charlier",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Whisky Gouden Carolus 70cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "fles",
+      "hoeveelheid": 3,
+      "id": "de-wit-campari-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Campari 100cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-martini-bianco-150cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Martini Bianco 150cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 2,
+      "id": "de-wit-martini-rosso-150cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Martini Rosso 150cl"
+    },
+    {
+      "bestelpunt": 3,
+      "eenheid": "fles",
+      "hoeveelheid": 4,
+      "id": "de-wit-vodka-absolut-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Vodka Absolut 100cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "fles",
+      "hoeveelheid": 3,
+      "id": "de-wit-rum-kraken-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Rum Kraken 70cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "fles",
+      "hoeveelheid": 2,
+      "id": "de-wit-gin-copperhead-50cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin Copperhead 50cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 2,
+      "id": "de-wit-copperhead-na-50cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Copperhead NA 50cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-whisky-jameson-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Whisky Jameson 100cl"
+    },
+    {
+      "bestelpunt": 7,
+      "eenheid": "fles",
+      "hoeveelheid": 10,
+      "id": "de-wit-aperol-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Aperol 100cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-pineau-des-charentes-75cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Pineau des Charentes 75cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "fles",
+      "hoeveelheid": 2,
+      "id": "de-wit-gin-huis-bombay-london-dry-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin huis (Bombay/London Dry) 100cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-gin-bulldog-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin Bulldog 70cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-gin-double-you-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin Double You 70cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-gin-marula-50cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin Marula 50cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-lillet-blanc-75cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Lillet blanc 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-lillet-rose-75cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Lillet rosé 75cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-ricard-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Ricard 100cl"
+    },
+    {
+      "bestelpunt": 3,
+      "eenheid": "fles",
+      "hoeveelheid": 4,
+      "id": "de-wit-seedlip-grove-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Seedlip Grove 70cl"
+    },
+    {
+      "bestelpunt": 0,
+      "eenheid": "fles",
+      "hoeveelheid": 3,
+      "id": "de-wit-vlierbloesemsiroop-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Vlierbloesemsiroop 70cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-creme-de-cassis-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Crème de cassis 70cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-licor-43-100cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Licor 43 100cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-gin-monkey-47-50cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Gin Monkey 47 50cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "fles",
+      "hoeveelheid": 1,
+      "id": "de-wit-kahlua-70cl",
+      "leverancier": "De Wit",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Kahlúa 70cl"
+    },
+    {
+      "bestelpunt": 5,
+      "eenheid": "fles",
+      "hoeveelheid": 7,
+      "id": "ayumu-fish-called-wanda-100cl",
+      "leverancier": "Ayumu",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Fish Called Wanda 100cl",
+      "verpakking": "per fles van 1 L"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "doos",
+      "hoeveelheid": 2,
+      "id": "ayumu-ginger-lemon-foam",
+      "leverancier": "Ayumu",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Ginger Lemongrass foam 400ml",
+      "verpakking": "per doos van 8"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "BIB 5L",
+      "hoeveelheid": 1,
+      "id": "mm-antverpia-limoncello-bib-5l",
+      "leverancier": "MM Antverpia",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Limoncello BIB 5L"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "BIB 5L",
+      "hoeveelheid": 1,
+      "id": "mm-antverpia-amaretto-bib-5l",
+      "leverancier": "MM Antverpia",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Amaretto BIB 5L"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "BIB 5L",
+      "hoeveelheid": 1,
+      "id": "mm-antverpia-spritz-0-0-bib-5l",
+      "leverancier": "MM Antverpia",
+      "locatie": "Sterke drank, aperitief & cocktails",
+      "product": "Spritz 0,0 BIB 5L"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "verpakking 10 kg",
+      "hoeveelheid": 1,
+      "id": "madmum-koffiebonen",
+      "leverancier": "Madmum",
+      "locatie": "Koffie & thee",
+      "product": "Koffiebonen",
+      "vastPerBestelling": true,
+      "verpakking": "per verpakking van 10 kg"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 2,
+      "id": "onan-thee-pomegranate",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Thee Pomegranate"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 1,
+      "id": "onan-thee-zorgeloos",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Thee Zorgeloos"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 1,
+      "id": "onan-thee-blanc-framboise",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Thee Blanc Framboise"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 1,
+      "id": "onan-thee-gunpowder",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Thee Gunpowder"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 1,
+      "id": "onan-thee-irish-breakfast",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Thee Irish Breakfast"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "kg",
+      "hoeveelheid": 1,
+      "id": "onan-chai",
+      "leverancier": "Onan",
+      "locatie": "Koffie & thee",
+      "product": "Chai"
+    }
+  ],
+  "volgordeVoorlopig": true
+}
