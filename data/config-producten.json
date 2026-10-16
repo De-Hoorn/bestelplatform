@@ -409,7 +409,7 @@
     {
       "bestelpunt": 6,
       "eenheid": "bak 24",
-      "hoeveelheid": 9,
+      "hoeveelheid": 6,
       "id": "cinoco-hysope-tonic-original-20cl",
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
@@ -418,7 +418,7 @@
     {
       "bestelpunt": 5,
       "eenheid": "bak 24",
-      "hoeveelheid": 7,
+      "hoeveelheid": 5,
       "id": "cinoco-hysope-ginger-beer-20cl",
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
@@ -427,7 +427,7 @@
     {
       "bestelpunt": 1,
       "eenheid": "bak 24",
-      "hoeveelheid": 2,
+      "hoeveelheid": 1,
       "id": "cinoco-hysope-ginger-ale-20cl",
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
@@ -454,7 +454,7 @@
     {
       "bestelpunt": 4,
       "eenheid": "doos 6",
-      "hoeveelheid": 6,
+      "hoeveelheid": 4,
       "id": "cinoco-buglioni-il-mona-75cl",
       "leverancier": "Cinoco",
       "locatie": "Wijn & bubbels",
@@ -463,7 +463,7 @@
     {
       "bestelpunt": 3,
       "eenheid": "doos 6",
-      "hoeveelheid": 4,
+      "hoeveelheid": 3,
       "id": "cinoco-alie-rose-75cl",
       "leverancier": "Cinoco",
       "locatie": "Wijn & bubbels",
@@ -490,7 +490,7 @@
     {
       "bestelpunt": 10,
       "eenheid": "doos 6",
-      "hoeveelheid": 14,
+      "hoeveelheid": 10,
       "id": "artevino-ijalba-viura-75cl",
       "leverancier": "Artevino",
       "locatie": "Wijn & bubbels",
@@ -499,7 +499,7 @@
     {
       "bestelpunt": 7,
       "eenheid": "doos 6",
-      "hoeveelheid": 10,
+      "hoeveelheid": 7,
       "id": "artevino-cava-gran-campo-75cl",
       "leverancier": "Artevino",
       "locatie": "Wijn & bubbels",
@@ -517,7 +517,7 @@
     {
       "bestelpunt": 1,
       "eenheid": "doos 6",
-      "hoeveelheid": 2,
+      "hoeveelheid": 1,
       "id": "artevino-nuna-malbec-75cl",
       "leverancier": "Artevino",
       "locatie": "Wijn & bubbels",
@@ -580,7 +580,7 @@
     {
       "bestelpunt": 2,
       "eenheid": "fles",
-      "hoeveelheid": 3,
+      "hoeveelheid": 2,
       "id": "de-wit-campari-100cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -598,7 +598,7 @@
     {
       "bestelpunt": 1,
       "eenheid": "fles",
-      "hoeveelheid": 2,
+      "hoeveelheid": 1,
       "id": "de-wit-martini-rosso-150cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -607,7 +607,7 @@
     {
       "bestelpunt": 3,
       "eenheid": "fles",
-      "hoeveelheid": 4,
+      "hoeveelheid": 3,
       "id": "de-wit-vodka-absolut-100cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -616,7 +616,7 @@
     {
       "bestelpunt": 2,
       "eenheid": "fles",
-      "hoeveelheid": 3,
+      "hoeveelheid": 2,
       "id": "de-wit-rum-kraken-70cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -634,7 +634,7 @@
     {
       "bestelpunt": 1,
       "eenheid": "fles",
-      "hoeveelheid": 2,
+      "hoeveelheid": 1,
       "id": "de-wit-copperhead-na-50cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -652,7 +652,7 @@
     {
       "bestelpunt": 7,
       "eenheid": "fles",
-      "hoeveelheid": 10,
+      "hoeveelheid": 7,
       "id": "de-wit-aperol-100cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -733,7 +733,7 @@
     {
       "bestelpunt": 3,
       "eenheid": "fles",
-      "hoeveelheid": 4,
+      "hoeveelheid": 3,
       "id": "de-wit-seedlip-grove-70cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -742,11 +742,12 @@
     {
       "bestelpunt": 0,
       "eenheid": "fles",
-      "hoeveelheid": 3,
+      "hoeveelheid": 0,
       "id": "de-wit-vlierbloesemsiroop-70cl",
       "leverancier": "De Wit",
       "locatie": "Sterke drank, aperitief & cocktails",
-      "product": "Vlierbloesemsiroop 70cl"
+      "product": "Vlierbloesemsiroop 70cl",
+      "verpakking": "per fles – niet bestellen tot eind 2026"
     },
     {
       "bestelpunt": 1,
@@ -787,7 +788,7 @@
     {
       "bestelpunt": 5,
       "eenheid": "fles",
-      "hoeveelheid": 7,
+      "hoeveelheid": 5,
       "id": "ayumu-fish-called-wanda-100cl",
       "leverancier": "Ayumu",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -797,7 +798,7 @@
     {
       "bestelpunt": 1,
       "eenheid": "doos",
-      "hoeveelheid": 2,
+      "hoeveelheid": 1,
       "id": "ayumu-ginger-lemon-foam",
       "leverancier": "Ayumu",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -843,9 +844,9 @@
       "verpakking": "per verpakking van 10 kg"
     },
     {
-      "bestelpunt": 1,
+      "bestelpunt": 3,
       "eenheid": "kg",
-      "hoeveelheid": 2,
+      "hoeveelheid": 3,
       "id": "onan-thee-pomegranate",
       "leverancier": "Onan",
       "locatie": "Koffie & thee",
