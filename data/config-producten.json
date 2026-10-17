@@ -416,6 +416,15 @@
       "product": "Appel-rodebietsap 75cl"
     },
     {
+      "bestelpunt": 1,
+      "eenheid": "fles 75cl",
+      "hoeveelheid": 1,
+      "id": "charlier-bietensap-75cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Bietensap 75cl"
+    },
+    {
       "bestelpunt": 6,
       "eenheid": "bak 24",
       "hoeveelheid": 6,
