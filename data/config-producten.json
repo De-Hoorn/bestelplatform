@@ -320,6 +320,15 @@
       "bestelpunt": 1,
       "eenheid": "bak 24",
       "hoeveelheid": 1,
+      "id": "charlier-fristi-20cl",
+      "leverancier": "Charlier",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Fristi 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
       "id": "charlier-thrive-peak-33cl",
       "leverancier": "Charlier",
       "locatie": "Frisdrank, sappen & water",
@@ -432,6 +441,15 @@
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
       "product": "Hysope ginger ale 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "cinoco-hysope-elderflower-tonic-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope elderflower tonic 20cl"
     },
     {
       "bestelpunt": 2,
