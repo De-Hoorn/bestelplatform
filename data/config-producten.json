@@ -2,6 +2,41 @@
   "bron": "Min-max Bestelvoorstel_dranken_wk42_2026_def.xlsx (16/10/2026)",
   "items": [
     {
+      "aanpasbaar": true,
+      "bestelpunt": 1.5,
+      "eenheid": "tank",
+      "hoeveelheid": 0.5,
+      "id": "tankbier-tank",
+      "leverancier": "BEES (AB InBev)",
+      "liter": 1000,
+      "locatie": "Tankbier",
+      "max": 3,
+      "minBestel": 1,
+      "product": "Stella tankbier",
+      "stap": 0.5,
+      "verpakking": "per tank van 1000 L – halve tank = 0,5"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "vat 20L",
+      "hoeveelheid": 1,
+      "id": "bees-gouden-carolus-vat-20l",
+      "leverancier": "BEES (AB InBev)",
+      "locatie": "Vaten",
+      "product": "Gouden Carolus vat 20L",
+      "verpakking": "per vat van 20 L – tel enkel reservevaten, niet het aangesloten vat"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "vat 20L",
+      "hoeveelheid": 1,
+      "id": "bees-la-chouffe-vat-20l",
+      "leverancier": "BEES (AB InBev)",
+      "locatie": "Vaten",
+      "product": "La Chouffe vat 20L",
+      "verpakking": "per vat van 20 L – tel enkel reservevaten, niet het aangesloten vat"
+    },
+    {
       "bestelpunt": 3,
       "eenheid": "vat 20L",
       "hoeveelheid": 2,
@@ -317,13 +352,14 @@
       "product": "Almdudler 35cl"
     },
     {
-      "bestelpunt": 1,
+      "bestelpunt": 0,
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "charlier-fristi-20cl",
       "leverancier": "Charlier",
       "locatie": "Frisdrank, sappen & water",
-      "product": "Fristi 20cl"
+      "product": "Fristi 20cl",
+      "verpakking": "per bak van 24 – voorlopig niet bijbestellen"
     },
     {
       "bestelpunt": 1,
@@ -410,24 +446,15 @@
       "bestelpunt": 4,
       "eenheid": "fles 75cl",
       "hoeveelheid": 2,
-      "id": "charlier-appel-rodebietsap-75cl",
+      "id": "charlier-rode-bietensap-75cl",
       "leverancier": "Charlier",
       "locatie": "Frisdrank, sappen & water",
-      "product": "Appel-rodebietsap 75cl"
+      "product": "Rode bietensap 75cl"
     },
     {
-      "bestelpunt": 1,
-      "eenheid": "fles 75cl",
-      "hoeveelheid": 1,
-      "id": "charlier-bietensap-75cl",
-      "leverancier": "Charlier",
-      "locatie": "Frisdrank, sappen & water",
-      "product": "Bietensap 75cl"
-    },
-    {
-      "bestelpunt": 6,
+      "bestelpunt": 4,
       "eenheid": "bak 24",
-      "hoeveelheid": 6,
+      "hoeveelheid": 4,
       "id": "cinoco-hysope-tonic-original-20cl",
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
@@ -452,13 +479,31 @@
       "product": "Hysope ginger ale 20cl"
     },
     {
-      "bestelpunt": 1,
+      "bestelpunt": 4,
       "eenheid": "bak 24",
-      "hoeveelheid": 1,
+      "hoeveelheid": 4,
       "id": "cinoco-hysope-elderflower-tonic-20cl",
       "leverancier": "Cinoco",
       "locatie": "Frisdrank, sappen & water",
       "product": "Hysope elderflower tonic 20cl"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "bak 24",
+      "hoeveelheid": 1,
+      "id": "cinoco-hysope-cucumber-tonic-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope cucumber tonic 20cl"
+    },
+    {
+      "bestelpunt": 2,
+      "eenheid": "bak 24",
+      "hoeveelheid": 2,
+      "id": "cinoco-hysope-grapefruit-tonic-20cl",
+      "leverancier": "Cinoco",
+      "locatie": "Frisdrank, sappen & water",
+      "product": "Hysope grapefruit tonic 20cl"
     },
     {
       "bestelpunt": 2,
@@ -587,13 +632,14 @@
       "product": "Royal Bliss Agrum 20cl"
     },
     {
-      "bestelpunt": 1,
+      "bestelpunt": 0,
       "eenheid": "fles",
       "hoeveelheid": 1,
       "id": "charlier-rum-havana-especial-100cl",
       "leverancier": "Charlier",
       "locatie": "Sterke drank, aperitief & cocktails",
-      "product": "Rum Havana Especial 100cl"
+      "product": "Rum Havana Especial 100cl",
+      "verpakking": "per fles – niet meer bijbestellen"
     },
     {
       "bestelpunt": 1,
@@ -852,15 +898,6 @@
     },
     {
       "bestelpunt": 1,
-      "eenheid": "BIB 5L",
-      "hoeveelheid": 1,
-      "id": "mm-antverpia-spritz-0-0-bib-5l",
-      "leverancier": "MM Antverpia",
-      "locatie": "Sterke drank, aperitief & cocktails",
-      "product": "Spritz 0,0 BIB 5L"
-    },
-    {
-      "bestelpunt": 1,
       "eenheid": "verpakking 10 kg",
       "hoeveelheid": 1,
       "id": "madmum-koffiebonen",
@@ -868,7 +905,18 @@
       "locatie": "Koffie & thee",
       "product": "Koffiebonen",
       "vastPerBestelling": true,
-      "verpakking": "per verpakking van 10 kg"
+      "verpakking": "per verpakking van 10 kg – tel enkel gesloten verpakkingen"
+    },
+    {
+      "bestelpunt": 1,
+      "eenheid": "verpakking 5 kg",
+      "hoeveelheid": 1,
+      "id": "madmum-deca-gemalen",
+      "leverancier": "Madmum",
+      "locatie": "Koffie & thee",
+      "product": "Deca gemalen",
+      "vastPerBestelling": true,
+      "verpakking": "per verpakking van 5 kg – tel enkel gesloten verpakkingen"
     },
     {
       "bestelpunt": 3,

@@ -91,6 +91,10 @@
             } catch (e) { fail({ code: e && e.name === "QuotaExceededError" ? "quota_exceeded" : "unavailable" }); }
           });
         };
+        q.clear = function () {
+          try { localStorage.removeItem(PREFIX + "col:" + name); emit("col:" + name); return Promise.resolve(); }
+          catch (e) { return Promise.reject({ code: "unavailable" }); }
+        };
         return q;
       }
     };

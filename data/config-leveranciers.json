@@ -13,7 +13,7 @@
     "BEES (AB InBev)": {
       "cyclus": 1,
       "groep": false,
-      "info": "Levering woensdag; minimum € 300"
+      "info": "Levering woensdag; minimum € 300. Stella tankbier: voorstel bij max. 1 volle tank (min. 1000 L), aan te passen volgens de eventplanning"
     },
     "Charlier": {
       "cyclus": 1,
@@ -43,7 +43,7 @@
     "Madmum": {
       "cyclus": 1,
       "groep": false,
-      "info": "Per 10 kg; levering vrijdag; lege doos meegeven"
+      "info": "Bonen per 10 kg, deca gemalen per 5 kg; bestellen als er geen gesloten verpakking meer is; levering vrijdag; lege doos meegeven"
     },
     "Onan": {
       "cyclus": 3,
