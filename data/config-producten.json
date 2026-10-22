@@ -352,14 +352,13 @@
       "product": "Almdudler 35cl"
     },
     {
-      "bestelpunt": 0,
+      "bestelpunt": 1,
       "eenheid": "bak 24",
       "hoeveelheid": 1,
       "id": "charlier-fristi-20cl",
       "leverancier": "Charlier",
       "locatie": "Frisdrank, sappen & water",
-      "product": "Fristi 20cl",
-      "verpakking": "per bak van 24 – voorlopig niet bijbestellen"
+      "product": "Fristi 20cl"
     },
     {
       "bestelpunt": 1,
@@ -533,22 +532,24 @@
       "product": "Buglioni Il Mona 75cl"
     },
     {
-      "bestelpunt": 3,
+      "bestelpunt": 0,
       "eenheid": "doos 6",
-      "hoeveelheid": 3,
+      "hoeveelheid": 0,
       "id": "cinoco-alie-rose-75cl",
       "leverancier": "Cinoco",
       "locatie": "Wijn & bubbels",
-      "product": "Alìe rosé 75cl"
+      "product": "Alìe rosé 75cl",
+      "verpakking": "per doos van 6 – geen rosé bestellen tot minstens maart 2027"
     },
     {
-      "bestelpunt": 1,
+      "bestelpunt": 0,
       "eenheid": "doos 6",
-      "hoeveelheid": 1,
+      "hoeveelheid": 0,
       "id": "cinoco-aix-rose-75cl",
       "leverancier": "Cinoco",
       "locatie": "Wijn & bubbels",
-      "product": "AIX rosé 75cl"
+      "product": "AIX rosé 75cl",
+      "verpakking": "per doos van 6 – geen rosé bestellen tot minstens maart 2027"
     },
     {
       "bestelpunt": 1,
@@ -634,7 +635,7 @@
     {
       "bestelpunt": 0,
       "eenheid": "fles",
-      "hoeveelheid": 1,
+      "hoeveelheid": 0,
       "id": "charlier-rum-havana-especial-100cl",
       "leverancier": "Charlier",
       "locatie": "Sterke drank, aperitief & cocktails",
@@ -965,12 +966,13 @@
     },
     {
       "bestelpunt": 1,
-      "eenheid": "kg",
+      "eenheid": "blik 1,5 kg",
       "hoeveelheid": 1,
-      "id": "onan-chai",
-      "leverancier": "Onan",
+      "id": "hanos-chai-latte-baru",
+      "leverancier": "Hanos",
       "locatie": "Koffie & thee",
-      "product": "Chai"
+      "product": "Spiced chai latte poeder Baru 1,5 kg",
+      "verpakking": "per blik van 1,5 kg (Hanos art. 23101280)"
     }
   ],
   "volgordeVoorlopig": true
